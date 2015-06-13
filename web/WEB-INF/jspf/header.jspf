@@ -1,0 +1,44 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="UTF-8" %>
+<div id="header">
+    <h1>Address Book</h1>
+    <ul id="nav-menu">
+        <c:choose>                
+            <c:when test="${sessionScope.status}">
+                <li><a href="index.jsp">Home</a></li>        
+                <li><a href="validate?action=logout">Logout</a></li>
+                </c:when>
+                
+                <c:when test="${(!sessionScope.status)} ">
+                <li><a href="index.jsp">Home</a></li>        
+                <li><a href="login.jsp">Login</a></li>
+                </c:when>  
+                
+                <c:otherwise>
+                <li><a href="index.jsp">Home</a></li>        
+                <li><a href="login.jsp">Login</a></li>
+                </c:otherwise>
+                
+
+        </c:choose>
+    </ul>
+    <div id="headerbg"></div>
+    <ul id="side_menu">
+        <li><a href="">Quick Links</a>
+            <ul style="display:block">
+                <li><a href="Contacts?action=changepass">Change Password</a></li>
+                <li><a href="#">Something</a></li>
+            </ul>
+        </li>         
+    </ul>
+
+    <ul id="bar">
+        <li><a href="index.jsp"><input type="submit" name="home" value="Home" /></a></li>
+        <li><a href="Contacts?action=add"><input type="submit" name="add" value="Add Contact"/></a></li>
+        <li><a href="Contacts?action=view"><input type="submit" name="view" value="View Contact"/></a></li>
+        <li><input type="submit" name="" value="Something"/></li>
+        <li><input type="submit" name="" value="Something"/></li>
+        <li><input type="submit" name="" value="Something"/></li>
+        <li><a href="Contacts?action=contact"><input type="submit" name="contact" value="Contact us"/></a></li>
+    </ul>
+</div>  
